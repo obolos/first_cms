@@ -12,10 +12,13 @@
             <!-- /.row -->
         </footer>
 
-    </div>
-    <!-- /.row -->
+
+</div>
+<!-- /.row -->
 </div>
 <!-- /.container -->
+
+
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

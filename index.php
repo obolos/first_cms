@@ -2,15 +2,14 @@
 <!-- Header -->
 
 <?php
-
+include "includes/db.php";
+include "includes/functions.php";
 include "includes/header.php";
 
 ?>
 
     <!-- Navigation -->
-<?php
-    include("includes/navigation.php");
-?>
+<?php include("includes/navigation.php"); ?>
 
     <!-- Page Content -->
 
@@ -19,12 +18,11 @@ include "includes/header.php";
 
 
     <!-- Blog Sidebar Widgets Column -->
-            <?php include("includes/sidebar.php") ?>
+            <?php include("includes/sidebar.php"); ?>
 
     <!-- Footer -->
 
-<?php
+<hr>
 
-include("includes/footer.php");
 
-?>
+<?php include("includes/footer.php"); ?>

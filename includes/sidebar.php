@@ -1,22 +1,28 @@
-<?php
 
-?>
 
 <div class="col-md-4">
 
     <!-- Blog Search Well -->
     <div class="well">
         <h4>Blog Search</h4>
+        <form action="search.php" method="post">
         <div class="input-group">
-            <input type="text" class="form-control">
+            <input type="text" name="search" class="form-control">
             <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
+                            <button class="btn btn-default" name="submit" type="submit">
                                 <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
-        </div>
-        <!-- /.input-group -->
+                            </button>
+            </span>
+                </div>
+        </form>
+
+
+
     </div>
+
+
+
+        <!-- /.input-group -->
 
     <!-- Blog Categories Well -->
     <div class="well">
@@ -48,10 +54,10 @@
                 </ul>
             </div>
             <!-- /.col-lg-6 -->
-        </div>
+
         <!-- /.row -->
     </div>
-
+    </div>
     <!-- Side Widget Well -->
     <div class="well">
         <h4>Side Widget Well</h4>
@@ -59,5 +65,7 @@
     </div>
 
 </div>
+
+
 
 
