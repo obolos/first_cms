@@ -1,6 +1,8 @@
 <?php
-      $query = "SELECT * FROM categories";
-      $result = mysqli_query($connection, $query);
+      //$query = "SELECT * FROM categories";
+     // $result = mysqli_query($connection, $query);
+
+      $result = Select_all ($connection, 'categories');
 ?>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -26,6 +28,10 @@
                     </li>
 
                     <?php endwhile; ?>
+
+                    <li>
+                        <a href="admin">Admin</a>
+                    </li>
 
                 </ul>
             </div>
