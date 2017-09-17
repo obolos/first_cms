@@ -1,9 +1,4 @@
-<?php
-    //$query = "SELECT * FROM posts";
-    //$result = mysqli_query($connection, $query);
-
-    $result = Select_all ($connection, 'posts');
-?>
+<?php $result = $posts->getAll(); ?>
 
 <div class="container">
 

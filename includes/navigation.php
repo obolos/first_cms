@@ -1,9 +1,4 @@
-<?php
-      //$query = "SELECT * FROM categories";
-     // $result = mysqli_query($connection, $query);
-
-      $result = Select_all ($connection, 'categories');
-?>
+<?php $result = $category->getAll(); ?>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">

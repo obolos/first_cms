@@ -1,29 +1,10 @@
-<?php include "includes/admin_header.php";
+<?php include "includes/admin_header.php"; ?>
 
-if (isset($_POST['submit'])) {
-$title = $_POST['cat_title'];
+<?php $message = $category->insertCategory(); ?>
 
-if ($title == "" || empty($title)) {
-$message = "Should not be empty";
-} else {
-$query = "INSERT INTO categories(cat_title) ";
-$query .= "VALUE('{$title}') ";
-if(!mysqli_query($connection, $query)) die ("QUERY FAILED" . mysqli_error($connection));
+<?php $category->deleteCategory(); ?>
 
-}
-}
-?>
-
-<?php
-if (isset($_GET['delete']) && !empty($_GET['delete'])) {
-    $delete = $_GET['delete'];
-    $query = "DELETE FROM categories WHERE cat_id='{$delete}'";
-    if (!mysqli_query($connection, $query)) die ("QUERY FALED" . mysqli_error($connection));
-
-}
-?>
-
-<?php $result = Select_all($connection, 'categories'); ?>
+<?php $result = $category->getAll(); ?>
 
 <body>
 
@@ -55,13 +36,25 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
                             <input id="cat-title" type="text" name="cat_title" class="form-control">
                         </div>
                             <div class="form-group">
-                                <input id="submit" type="submit" name="submit" class="btn btn-primary">
+                                <input type="submit" value="Add Category" name="submit" class="btn btn-primary">
                             </div>
-                            <span class="text-danger">
+                            <span class='text-danger'>
                                     <?php if(isset($message)) echo $message; ?>
                             </span>
 
                         </form>
+
+                            <?php
+                                if (isset($_GET['edit'])) {
+                                        $cat_id = $_GET['edit'];
+                                        $text = $category->getById($cat_id);
+                                        $category->updateCategory($cat_id);
+
+                                    include "includes/edit_categories.php";
+                                }
+                             ?>
+
+
                         </div>
 
                         <div class="col-xs-6">
@@ -69,8 +62,7 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Title</th>
-                                    <th>Action</th>
+                                    <th colspan="3">Title</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -82,6 +74,12 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
                                     <td><a href="category.php?delete=<?php echo $row['cat_id']; ?>">
                                             <span class="glyphicon glyphicon-remove"></span>
                                         </a>
+                                    </td>
+                                    <td>
+                                        <a href="category.php?edit=<?php echo $row['cat_id']; ?>">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </a>
+
                                     </td>
                                 </tr>
                                 <?php endwhile; ?>

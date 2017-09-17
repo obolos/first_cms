@@ -1,3 +1,4 @@
+<?php include "functions.php"; ?>
 <?php
 
 $db['db_host'] = 'localhost';
@@ -9,13 +10,6 @@ foreach($db as $key => $values) {
     define(strtoupper($key), $values);
 }
 
-
 $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-
-
-
-
-
-
+$template = new CoreTemplate($connection);
 ?>

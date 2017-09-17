@@ -12,42 +12,44 @@
             <li>
                 <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
-            <li>
-                <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-            </li>
-
 
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#admin_categories"><i class="fa fa-fw fa-edit">
 
-                    </i> Categories <i class="fa fa-fw fa-caret-down"></i></a>
+                    </i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="admin_categories" class="collapse">
                     <li>
-                        <a href="#">View Categories</a>
-                    </li>
-                    <li>
-                        <a href="#">Edit Categories</a>
-                    </li>
-                </ul>
-            </li>
-
-
-            <li>
-                <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-            </li>
-
-            <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#admin_posts"><i class="fa fa-fw fa-arrows-v">
-
-                    </i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
-                <ul id="admin_posts" class="collapse">
-                    <li>
-                        <a href="#">View Posts</a>
+                        <a href="posts.php">View Posts</a>
                     </li>
                     <li>
                         <a href="#">Edit Posts</a>
                     </li>
                 </ul>
+            </li>
+
+            <li>
+                <a href="category.php"><i class="fa fa-fw fa-bar-chart-o"></i> Categories </a>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-fw fa-desktop"></i> Comments</a>
+            </li>
+
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#admin_posts"><i class="fa fa-fw fa-arrows-v">
+
+                    </i> Users <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="admin_posts" class="collapse">
+                    <li>
+                        <a href="#">View Users</a>
+                    </li>
+                    <li>
+                        <a href="#">Edit Users</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href=""><i class="fa fa-fw fa-desktop"></i> Profile</a>
             </li>
 
         </ul>

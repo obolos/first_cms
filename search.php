@@ -2,24 +2,16 @@
 <!-- Header -->
 
 <?php
-include "includes/db.php";
 include "includes/functions.php";
 include "includes/header.php";
 
-$search_result = Post_search($connection, $_POST['search']);
-/*
-if (isset($_POST['submit'])) {
-    $search = $_POST['search'];
-    $query = "SELECT * FROM posts WHERE post_tags LIKE '%{$search}%'";
-    $search_result = mysqli_query($connection, $query);
+if(isset($_POST['search']) && !empty(trim($_POST['search']))){
+    $param = $_POST['search'];
+    $search = $posts->searchPosts($param);
 
-    if (!$search_result) {
-        die ("QUERY FAILED" . mysqli_error($connection));
-    }
-    echo mysqli_num_rows($search_result); // Test Result
-
+}else {
+    $search = $posts->getAll();
 }
-*/
 
 ?>
 
@@ -39,7 +31,7 @@ if (isset($_POST['submit'])) {
                 <small>Secondary Text</small>
             </h1>
 
-            <?php while($row = mysqli_fetch_assoc($search_result)): ?>
+            <?php while($row = mysqli_fetch_assoc($search)): ?>
 
                 <!-- First Blog Post -->
                 <h2>

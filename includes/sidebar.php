@@ -1,4 +1,4 @@
-<?php $result = Select_all ($connection, 'categories'); ?>
+<?php $result = $category->getAll(); ?>
 
 <div class="col-md-4">
 
